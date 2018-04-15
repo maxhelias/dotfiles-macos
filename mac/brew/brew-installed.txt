@@ -1,0 +1,10 @@
+composer
+curl
+git
+graphviz
+htop
+httpie
+node
+vim
+wget
+yarn

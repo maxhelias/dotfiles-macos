@@ -1,0 +1,9 @@
+{
+  "require": {
+  	"phpdocumentor/phpdocumentor": "@stable",
+    "squizlabs/php_codesniffer": "@stable",
+    "psy/psysh": "@stable",
+    "phpmd/phpmd": "@stable"
+  },
+  "minimum-stability": "dev"
+}

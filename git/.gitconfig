@@ -1,0 +1,17 @@
+[alias]
+        # Delete branches merged with master @todo don't delete development and so on...
+        cleanup = "!git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+
+[core]
+        excludesfile = ~/.gitignore_global
+        attributesfile = ~/.gitattributes
+        editor = vim
+        autocrlf = input
+        trustctime = false
+        precomposeunicode = false

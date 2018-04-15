@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+echo '♢ Updating App Store apps'
+mas upgrade
+
+echo ''
+echo '♢ Updating Brew apps'
+brew update >/dev/null
+brew outdated | xargs -n1 brew upgrade
+
+echo ''
+echo '♢ Updating Brew Cask apps'
+brew cask outdated | xargs -n1 brew cask install --force
+
+echo ''
+echo '♢ Updating Composer (PHP)'
+composer global update
+
+echo ''
+echo '♢ Updating npm (JS)'
+npm update -g
