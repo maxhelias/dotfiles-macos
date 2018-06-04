@@ -33,6 +33,8 @@ mkdir $HOME/www/formation
 mkdir $HOME/www/proximis
 mkdir $HOME/www/magento
 mkdir $HOME/docker
+mkdir $HOME/backup
+mkdir $HOME/logs
 
 ### MacOs stuff ###
 # Install Brew
@@ -65,6 +67,9 @@ if [[ "${username}" != "" ]]; then
 fi
 
 ### Console stuff ###
+echo ""
+echo "${info}==> Setting your environnement...${reset}"
+
 # Bash
 ln -s $DOTFILES_PATH/console/bash/.bashrc $HOME/.bashrc
 ln -s $DOTFILES_PATH/console/bash/.bash_profile $HOME/.bash_profile
@@ -106,11 +111,8 @@ git clone https://github.com/EmakinaFR/docker-proximis.git $HOME/docker/proximis
 # Proximis.sh
 read -r -p "${question}Do you have a BitBucket account to install the Proximis.sh ? (y/n) :${reset} " proximissh
 if [[ "${proximissh}" == "y" ]]; then
-	read -r -p "${question}Enter your login account :${reset} " account
-	if [[ "${account}" != "" ]]; then
-		git clone https://${account}@bitbucket.org/snippets/emakinafr-commerce/o6K6B/proximis-build-any-project-wip.git $HOME/www/proximis/install
-		ln -s $HOME/www/proximis/install/proximis.sh $HOME/www/proximis/proximis.sh
-	fi
+	git clone git@bitbucket.org:snippets/emakinafr-commerce/o6K6B/proximis-build-any-project-wip.git $HOME/www/proximis/install
+	ln -s $HOME/www/proximis/install/proximis.sh $HOME/www/proximis/proximis.sh
 fi
 
 # Docker Magento

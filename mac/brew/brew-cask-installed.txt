@@ -1,6 +1,7 @@
 appcleaner
 cakebrew
 dash
+docker-beta
 evernote
 firefox
 flux

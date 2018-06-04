@@ -119,7 +119,7 @@ function docker-version() {
 }
 
 # Permet d'aller à l'intérieur d'un des services gérés par Docker Compose.
-function docker-go() {
+docker-go() {
     docker-compose exec $1 bash
 }
 
@@ -139,11 +139,6 @@ docker-stats() {
     docker stats $(docker ps --format={{.Names}})
 }
 
-function dc-laradock() {
-	cd ~/Docker/laradock && dc up -d nginx postgres-postgis redis
+gosites() {
+    cd ~/www/$1
 }
-
-function dc-laradock-build() {
-	cd ~/Docker/laradock && dc build nginx postgres-postgis redis
-}
-

@@ -1,9 +1,16 @@
 {
-  "require": {
-  	"phpdocumentor/phpdocumentor": "@stable",
-    "squizlabs/php_codesniffer": "@stable",
-    "psy/psysh": "@stable",
-    "phpmd/phpmd": "@stable"
-  },
-  "minimum-stability": "dev"
+	"config": {
+		"optimize-autoloader": true
+	},
+	"require": {
+		"phpdocumentor/phpdocumentor": "@stable",
+		"squizlabs/php_codesniffer": "@stable",
+		"psy/psysh": "@stable",
+		"phpmd/phpmd": "@stable",
+		"friendsofphp/php-cs-fixer": "@stable",
+		"phpstan/phpstan": "@stable",
+		"hirak/prestissimo": "@stable"
+	},
+	"prefer-stable": true,
+	"minimum-stability": "dev"
 }
