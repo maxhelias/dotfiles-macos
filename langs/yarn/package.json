@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@api-platform/client-generator": "^0.1.16"
+  }
+}

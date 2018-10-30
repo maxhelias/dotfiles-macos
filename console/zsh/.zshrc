@@ -2,10 +2,10 @@
 DOTFILES_PATH=$HOME/dotfiles
 
 # PHP with homebrew
-BREW_PHP=$(brew --prefix php71)/bin
+#BREW_PHP=$(brew --prefix php71)/bin
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$BREW_PHP:$PATH:$HOME/bin:/usr/local/bin:$DOTFILES_PATH/bin
+export PATH=$PATH:$HOME/bin:/usr/local/bin:$DOTFILES_PATH/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -97,9 +97,11 @@ source $DOTFILES_PATH/console/init.sh
 alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 alias dc="docker-compose"
-alias grep="grep —color=auto"
+alias grep="grep --color=auto"
+alias sf="php bin/console"
 alias blackfire-curl="dc exec blackfire blackfire curl"
 alias blackfire-run="dc exec php blackfire run"
+alias proximis="~/www/proximis/composerProxy-darwin -c ~/www/proximis/proximis-composer-repo-2bcec11e5465.json"
 
 # Automatically added by the Platform.sh CLI installer
 export PATH="~/.platformsh/bin:$PATH"

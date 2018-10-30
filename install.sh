@@ -102,7 +102,10 @@ ln -s $DOTFILES_PATH/langs/php/composer.json $HOME/.composer/composer.json
 composer global update
 
 # NPM
-
+rm -R $HOME/.config/yarn/global
+mkdir $HOME/.config/yarn/global
+ln -s $DOTFILES_PATH/langs/yarn/package.json $HOME/.config/yarn/global/package.json
+yarn global upgrade
 
 ### Init project ###
 # Docker Proximis

@@ -2,6 +2,7 @@ composer
 curl
 git
 graphviz
+grep
 htop
 httpie
 node

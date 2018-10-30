@@ -3,12 +3,12 @@ cakebrew
 dash
 docker-beta
 evernote
+filezilla
 firefox
 flux
 franz
 gitkraken
 google-chrome
-handshaker
 iterm2
 java
 macdown
