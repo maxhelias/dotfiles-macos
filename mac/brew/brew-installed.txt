@@ -5,7 +5,9 @@ graphviz
 grep
 htop
 httpie
+mplayer
 node
 vim
 wget
 yarn
+youtube-dl

@@ -5,7 +5,7 @@ DOTFILES_PATH=$HOME/dotfiles
 #BREW_PHP=$(brew --prefix php71)/bin
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:$HOME/bin:/usr/local/bin:$DOTFILES_PATH/bin
+export PATH=/usr/local/bin:$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.symfony/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -57,7 +57,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew composer docker docker-compose git laravel5 node react-native redis-cli sublime symfony web-search yarn zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
+plugins=(aws brew colored-man-page composer docker docker-compose git laravel5 node react-native redis-cli sublime symfony web-search yarn z zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,39 +94,60 @@ source $DOTFILES_PATH/console/init.sh
 ################
 ### MY ALIAS ###
 ################
+# ZSH Config
 alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
+
+# Brew
+alias brew-upgrade="brew upgrade | tee upgrade-$( date +%F ).log"
+
+# Docker
 alias dc="docker-compose"
-alias grep="grep --color=auto"
+alias dc-rmi="docker-compose down -v --rmi all --remove-orphans"
+
+# Symfony
 alias sf="php bin/console"
+alias sfsr="sf server:run"
+alias sfcl="rm -rf */cache/*"
+alias sfcll="rm */logs/*.log"
+
+# Blackfire
 alias blackfire-curl="dc exec blackfire blackfire curl"
 alias blackfire-run="dc exec php blackfire run"
-alias proximis="~/www/proximis/composerProxy-darwin -c ~/www/proximis/proximis-composer-repo-2bcec11e5465.json"
+
+# Proximis
+alias proximis="~/www/proximis/composerProxy-darwin -c ~/www/proximis/proximis-composer-repo.json"
+
+# Other
+alias grep="grep --color=auto"
 
 # Automatically added by the Platform.sh CLI installer
 export PATH="~/.platformsh/bin:$PATH"
 . '~/.platformsh/shell-config.rc' 2>/dev/null || true
 
 
-# Function
-function meteo() {
+#################
+## MY FUNCTION ##
+#################
+# See the weather 
+function weather() {
   if [[ ! -z "$@" ]]; then
     curl wttr.in/~$@
   fi
 }
 
-# Permet d'afficher les versions des outils docker
+# View versions of docker tools
 function docker-version() {
     docker -v && docker-machine -v && docker-compose -v
 }
 
-# Permet d'aller à l'intérieur d'un des services gérés par Docker Compose.
+# Go inside one of the services managed by Docker Compose.
 docker-go() {
     docker-compose exec $1 bash
 }
 
-# Permet de copier une clé SSH et de démarrer automatiquement le SSH agent dans un conteneur,
-# il est nécessaire de changer le nom du conteneur voir aussi le chemin vers la clé SSH. 
+# Copy an SSH key and automatically start the SSH agent in a container,
+# it is necessary to change the name of the container also see the path to the SSH key.
 docker-cp() {
     [[ -z "$2" ]] && nb=1 || nb=$2
 
@@ -136,11 +157,17 @@ docker-cp() {
     docker exec "${$(basename $PWD)//-/}_$1_$nb" sh -c "echo 'eval \$(ssh-agent) && ssh-add' >> /root/.bashrc"
 }
 
-# Permet de visualiser en temps réel l'utilisation des ressources par les conteneurs démarrés.
+# Allows you to visualize in real time the use of resources by the started containers.
 docker-stats() {
     docker stats $(docker ps --format={{.Names}})
 }
 
+# Go to my project folder
 gosites() {
     cd ~/www/$1
+}
+
+# Update permissions for a Symfony project
+sfpermission() {
+  chmod 0777 */cache */logs
 }

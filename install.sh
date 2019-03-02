@@ -108,20 +108,19 @@ ln -s $DOTFILES_PATH/langs/yarn/package.json $HOME/.config/yarn/global/package.j
 yarn global upgrade
 
 ### Init project ###
-# Docker Proximis
+## Symfony
+# Binary
+curl -sS https://get.symfony.com/cli/installer | bash
+# Docker
+git clone https://github.com/dunglas/symfony-docker.git $HOME/docker/symfony
+
+## Docker Proximis
 git clone https://github.com/EmakinaFR/docker-proximis.git $HOME/docker/proximis
 
-# Proximis.sh
-read -r -p "${question}Do you have a BitBucket account to install the Proximis.sh ? (y/n) :${reset} " proximissh
-if [[ "${proximissh}" == "y" ]]; then
-	git clone git@bitbucket.org:snippets/emakinafr-commerce/o6K6B/proximis-build-any-project-wip.git $HOME/www/proximis/install
-	ln -s $HOME/www/proximis/install/proximis.sh $HOME/www/proximis/proximis.sh
-fi
-
-# Docker Magento
+## Docker Magento
 git clone https://github.com/EmakinaFR/docker-magento2.git $HOME/docker/magento2
 
-# Docker-gc (Garbage Collector)
+## Docker-gc (Garbage Collector)
 git clone https://gist.github.com/ajardin/e96ac1452834c706459edc5003884444 $HOME/docker/docker-gc
 ln -s $HOME/docker/docker-gc/docker-gc.sh $HOME/docker/docker-gc.sh
 touch $HOME/.docker/.gc-exclude-images
