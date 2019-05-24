@@ -1,23 +1,32 @@
 #!/bin/sh
 
+# Define variable
+UNAME=$(uname)
+DOTFILES_PATH=$HOME/dotfiles
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+
+# Check if the installation is possible
+if [ "$UNAME" != "Darwin" ] ; then
+	echo "Sorry, this OS is not supported yet via this installer."
+    exit 1
+fi
+
+if [ -z $HOME ] || [ ! -d $HOME ]; then
+	echo "The installation and use of this dotfiles requires the \$HOME environment variable be set to a directory where its files can be installed."
+	exit 1
+fi
+
+if [ -d $DOTFILES_PATH ]; then
+	echo "You already have an installation of this dotfiles"
+	exit 1
+fi
+
 # Define output formats
 question=$(tput bold)
 error=$(tput setaf 1)
 info=$(tput setaf 4)
 success=$(tput setaf 2)
 reset=$(tput sgr0)
-
-# Define variable
-DOTFILES_PATH=$HOME/dotfiles
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
-
-# Request a confirmation going further
-read -r -p "${question}Before you run this script, you need a configured SSH key. Do you have your SSH key GitHub & BitBucket ? (y/n):${reset} " response
-if [[ "${response}" != "y" ]]; then
-    echo "${error}Installation cancelled.${reset}"
-    exit 1
-fi
-
 
 echo ""
 echo "${info}==> Installation in progress...${reset}"
@@ -30,8 +39,8 @@ killall Finder
 mkdir $HOME/www
 mkdir $HOME/www/archive
 mkdir $HOME/www/formation
-mkdir $HOME/www/proximis
 mkdir $HOME/www/magento
+mkdir $HOME/www/contrib
 mkdir $HOME/docker
 mkdir $HOME/backup
 mkdir $HOME/logs
@@ -42,6 +51,10 @@ mkdir $HOME/logs
 brew update
 brew upgrade
 brew tap caskroom/cask
+
+# Get repository
+brew install -y git
+git clone https://github.com/maxhelias/dotfiles-macos $DOTFILES_PATH
 
 xargs brew install < mac/brew/brew-installed.txt
 xargs brew cask install < mac/brew/brew-cask-installed.txt
@@ -57,12 +70,12 @@ ln -s $DOTFILES_PATH/git/.gitignore_global $HOME/.gitignore_global
 ln -s $DOTFILES_PATH/git/.gitattributes $HOME/.gitattributes
 
 read -r -p "${question}Enter your email :${reset} " email
-if [[ "${email}" != "" ]]; then
+if [ "${email}" != "" ]; then
 	git config --global user.email ${email}
 fi
 
 read -r -p "${question}Enter your username :${reset} " username
-if [[ "${username}" != "" ]]; then
+if [ "${username}" != "" ]; then
 	git config --global user.name "${username}"
 fi
 
@@ -94,7 +107,7 @@ curl -sS https://platform.sh/cli/installer | php
 
 ### Langs stuff ###
 # PHP
-brew install php@7.1
+brew install php
 
 rm -R $HOME/.composer
 mkdir $HOME/.composer
@@ -114,9 +127,6 @@ curl -sS https://get.symfony.com/cli/installer | bash
 # Docker
 git clone https://github.com/dunglas/symfony-docker.git $HOME/docker/symfony
 
-## Docker Proximis
-git clone https://github.com/EmakinaFR/docker-proximis.git $HOME/docker/proximis
-
 ## Docker Magento
 git clone https://github.com/EmakinaFR/docker-magento2.git $HOME/docker/magento2
 
@@ -127,6 +137,9 @@ touch $HOME/.docker/.gc-exclude-images
 touch $HOME/.docker/.gc-exclude-containers
 touch $HOME/.docker/.gc-exclude-volumes
 
+
+### Install contrib
+sh $DOTFILES_PATH/mac/contrib.sh
 
 ### Fix font agnoster ###
 # clone

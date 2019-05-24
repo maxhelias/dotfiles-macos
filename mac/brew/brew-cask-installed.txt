@@ -1,14 +1,15 @@
 appcleaner
 cakebrew
+copyclip
 dash
 docker-beta
 evernote
 filezilla
 firefox
 flux
-franz
 gitkraken
 google-chrome
+google-drive-file-stream
 iterm2
 java
 macdown
@@ -17,7 +18,9 @@ phpstorm
 postman
 soapui
 spectacle
+station
 sublime-text
 virtualbox
 visual-studio-code
 vlc
+winds

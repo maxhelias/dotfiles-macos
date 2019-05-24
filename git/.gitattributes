@@ -1,3 +1,13 @@
-*.json diff=json
+* text=auto eol=lf
+
+*.js text eol=lf
+*.json text eol=lf diff=json
+*.html text eol=lf
+*.md text eol=lf
+*.php text eol=lf
+*.sh text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
 *.png diff=exif
 *.jpg diff=exif

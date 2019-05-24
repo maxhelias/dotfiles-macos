@@ -1,9 +1,6 @@
 # Dotfiles path
 DOTFILES_PATH=$HOME/dotfiles
 
-# PHP with homebrew
-#BREW_PHP=$(brew --prefix php71)/bin
-
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/local/bin:$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.symfony/bin
 
@@ -57,7 +54,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew colored-man-page composer docker docker-compose git laravel5 node react-native redis-cli sublime symfony web-search yarn z zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
+plugins=(aws brew composer docker docker-compose git laravel5 node react-native redis-cli sublime symfony web-search yarn z zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
 
 source $ZSH/oh-my-zsh.sh
 

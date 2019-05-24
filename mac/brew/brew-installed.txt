@@ -1,6 +1,5 @@
 composer
 curl
-git
 graphviz
 grep
 htop

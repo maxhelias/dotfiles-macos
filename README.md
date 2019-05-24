@@ -19,3 +19,12 @@
    - brew
    - iTerm
  * And much more!
+
+
+ ## Install
+
+Run this command : 
+
+```sh
+curl -s https://raw.githubusercontent.com/maxhelias/dotfiles-macos/master/install.sh | sh
+```
