@@ -2,7 +2,7 @@
 DOTFILES_PATH=$HOME/dotfiles
 
 # If you come from bash you might have to change your $PATH.
-export PATH=/usr/local/bin:$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.symfony/bin
+export PATH=$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.composer/vendor/bin:$HOME/.symfony/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -54,7 +54,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew composer docker docker-compose git laravel5 node react-native redis-cli sublime symfony web-search yarn z zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
+plugins=(aws brew composer docker docker-compose git node react-native redis-cli sublime symfony web-search yarn z zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,9 +102,11 @@ alias brew-upgrade="brew upgrade | tee upgrade-$( date +%F ).log"
 alias dc="docker-compose"
 alias dc-rmi="docker-compose down -v --rmi all --remove-orphans"
 
+# PHP
+alias sc="security-checker security:check"
+
 # Symfony
 alias sf="php bin/console"
-alias sfsr="sf server:run"
 alias sfcl="rm -rf */cache/*"
 alias sfcll="rm */logs/*.log"
 
@@ -112,11 +114,9 @@ alias sfcll="rm */logs/*.log"
 alias blackfire-curl="dc exec blackfire blackfire curl"
 alias blackfire-run="dc exec php blackfire run"
 
-# Proximis
-alias proximis="~/www/proximis/composerProxy-darwin -c ~/www/proximis/proximis-composer-repo.json"
-
 # Other
 alias grep="grep --color=auto"
+alias count="cloc . --exclude-dir=node_modules,test,tests,var,vendor"
 
 # Automatically added by the Platform.sh CLI installer
 export PATH="~/.platformsh/bin:$PATH"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo '♢ Updating App Store apps'
-mas upgrade
+mac upgrade
 
 echo ''
 echo '♢ Updating Brew apps'

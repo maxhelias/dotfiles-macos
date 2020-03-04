@@ -19,3 +19,5 @@ completer.hist
 ehthumbs.db
 Thumbs.db
 
+# PHP-CS-Fixer
+.php_cs.cache

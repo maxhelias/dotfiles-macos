@@ -46,6 +46,9 @@ mkdir $HOME/backup
 mkdir $HOME/logs
 
 ### MacOs stuff ###
+sudo xcodebuild --install
+sudo xcodebuild -license
+
 # Install Brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
@@ -53,11 +56,11 @@ brew upgrade
 brew tap caskroom/cask
 
 # Get repository
-brew install -y git
+brew install git
 git clone https://github.com/maxhelias/dotfiles-macos $DOTFILES_PATH
 
-xargs brew install < mac/brew/brew-installed.txt
-xargs brew cask install < mac/brew/brew-cask-installed.txt
+xargs brew install < $DOTFILES_PATH/mac/brew/brew-installed.txt
+xargs brew cask install < $DOTFILES_PATH/mac/brew/brew-cask-installed.txt
 
 ### Git stuff ###
 # Git
@@ -104,7 +107,6 @@ git clone https://github.com/iam4x/zsh-iterm-touchbar.git $ZSH_CUSTOM/plugins/zs
 # Platform.sh
 curl -sS https://platform.sh/cli/installer | php
 
-
 ### Langs stuff ###
 # PHP
 brew install php
@@ -126,9 +128,6 @@ yarn global upgrade
 curl -sS https://get.symfony.com/cli/installer | bash
 # Docker
 git clone https://github.com/dunglas/symfony-docker.git $HOME/docker/symfony
-
-## Docker Magento
-git clone https://github.com/EmakinaFR/docker-magento2.git $HOME/docker/magento2
 
 ## Docker-gc (Garbage Collector)
 git clone https://gist.github.com/ajardin/e96ac1452834c706459edc5003884444 $HOME/docker/docker-gc

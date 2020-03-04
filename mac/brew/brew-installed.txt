@@ -1,5 +1,9 @@
+cloc
 composer
 curl
+exa
+github/gh/gh
+gpg
 graphviz
 grep
 htop

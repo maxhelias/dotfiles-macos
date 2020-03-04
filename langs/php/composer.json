@@ -1,14 +1,16 @@
 {
 	"config": {
-		"optimize-autoloader": true
+		"optimize-autoloader": true,
+		"sort-packages": true
 	},
 	"require": {
-		"psy/psysh": "@stable",
-		"phpmd/phpmd": "@stable",
+		"ergebnis/composer-normalize": "@stable",
+		"icanhazstring/composer-unused": "@stable",
 		"friendsofphp/php-cs-fixer": "dev-master",
 		"phpstan/phpstan": "dev-master",
-		"hirak/prestissimo": "dev-master",
-		"sensiolabs/security-checker": "dev-master"
-	},
-	"minimum-stability": "dev"
+		"phpunit/phpunit": "@stable",
+		"psy/psysh": "@stable",
+		"sensiolabs/security-checker": "@stable",
+		"symfony/flex": "@stable"
+	}
 }

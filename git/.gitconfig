@@ -1,6 +1,10 @@
 [alias]
         # Delete branches merged with master @todo don't delete development and so on...
-        cleanup = "!git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+        cleanup = "!git checkout development && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+        # Display a graph history
+        graph = "!git log --all --decorate --oneline --graph --date=short --pretty='%C(red)%h%Creset | %C(yellow)%ad%Creset | %C(green)%an%Creset | %s'"
+        # Display contributor
+        contibutor = "!git shortlog -s -n -e | head"
 
 [color]
         diff = auto
@@ -15,3 +19,6 @@
         autocrlf = input
         trustctime = false
         precomposeunicode = false
+
+[commit]
+        gpgsign = false
