@@ -1,7 +1,6 @@
 appcleaner
 cakebrew
 copyclip
-flux
 google-chrome
 google-drive-file-stream
 iterm2

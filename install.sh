@@ -38,7 +38,7 @@ if [[ -z $HOME ]] || [[ ! -d $HOME ]]; then
 fi
 
 if [[ -d ${DOTFILES_PATH} ]]; then
-	if confirm "${question}You already have an installation of this dotfiles. Do you want to reinstall it ?${reset}"; then
+	if false != confirm "${question}You already have an installation of this dotfiles. Do you want to reinstall it ?${reset}"; then
 	    echo ""
         echo "${error}==> Installation abort...${reset}"
 
@@ -67,10 +67,10 @@ sudo xcodebuild --install
 sudo xcodebuild -license
 
 # Install Brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 brew upgrade
-brew tap caskroom/cask
+brew tap homebrew/cask-cask
 
 # Get repository
 brew install git
@@ -89,7 +89,7 @@ ln -sf ${DOTFILES_PATH}/git/.gitconfig $HOME/.gitconfig
 ln -sf ${DOTFILES_PATH}/git/.gitignore_global $HOME/.gitignore_global
 ln -sf ${DOTFILES_PATH}/git/.gitattributes $HOME/.gitattributes
 
-if confirm "${question}Do you want to save your Git credentials ? [Y/n]${reset}"; then
+if confirm "${question}Do you want to save your Git credentials ?${reset}"; then
     read -r -p "${question}Enter your email :${reset} " email
     if [[ "${email}" != "" ]]; then
         git config --global user.email ${email}
