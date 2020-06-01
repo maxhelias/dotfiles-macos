@@ -89,7 +89,7 @@ ln -sf ${DOTFILES_PATH}/git/.gitconfig $HOME/.gitconfig
 ln -sf ${DOTFILES_PATH}/git/.gitignore_global $HOME/.gitignore_global
 ln -sf ${DOTFILES_PATH}/git/.gitattributes $HOME/.gitattributes
 
-if [[ confirm "${question}Do you want to save your Git credentials ? [Y/n]${reset}" ]]; then
+if confirm "${question}Do you want to save your Git credentials ? [Y/n]${reset}"; then
     read -r -p "${question}Enter your email :${reset} " email
     if [[ "${email}" != "" ]]; then
         git config --global user.email ${email}
