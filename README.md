@@ -72,3 +72,7 @@ sf # Run Symfony Console on the current project
 sfcl # Hard delete cache folder
 sfcll # Hard delete log file on logs folder
 ```
+
+#### TODO
+
+- Use [homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) and Brewfile
