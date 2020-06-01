@@ -38,7 +38,7 @@ if [[ -z $HOME ]] || [[ ! -d $HOME ]]; then
 fi
 
 if [[ -d ${DOTFILES_PATH} ]]; then
-	if [[ confirm "${question}You already have an installation of this dotfiles. Do you want to reinstall it ? [Y/n]${reset}" != true ]]; then
+	if confirm "${question}You already have an installation of this dotfiles. Do you want to reinstall it ?${reset}"; then
 	    echo ""
         echo "${error}==> Installation abort...${reset}"
 
