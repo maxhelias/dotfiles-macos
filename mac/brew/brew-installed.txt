@@ -12,5 +12,6 @@ mplayer
 node
 vim
 wget
+wrk
 yarn
 youtube-dl
