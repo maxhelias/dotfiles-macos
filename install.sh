@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 confirm()
 {
@@ -70,7 +70,8 @@ sudo xcodebuild -license
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
 brew upgrade
-brew tap homebrew/cask-cask
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 
 # Get repository
 brew install git
@@ -155,16 +156,6 @@ touch $HOME/.docker/.gc-exclude-volumes
 
 ### Install contrib
 sh ${DOTFILES_PATH}/mac/contrib.sh
-
-### Fix font agnoster ###
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1 $HOME/fonts
-# install
-cd $HOME/fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf $HOME/fonts
 
 # Refresh terminal
 source ~/.zshrc
