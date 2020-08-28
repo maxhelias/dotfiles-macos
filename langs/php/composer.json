@@ -10,7 +10,6 @@
 		"phpstan/phpstan": "dev-master",
 		"phpunit/phpunit": "@stable",
 		"psy/psysh": "@stable",
-		"sensiolabs/security-checker": "@stable",
-		"symfony/flex": "@stable"
+		"sensiolabs/security-checker": "@stable"
 	}
 }

@@ -143,8 +143,6 @@ yarn global upgrade
 ## Symfony
 # Binary
 curl -sS https://get.symfony.com/cli/installer | bash
-# Docker
-git clone https://github.com/dunglas/symfony-docker.git $HOME/docker/symfony
 
 ## Docker-gc (Garbage Collector)
 git clone https://gist.github.com/ajardin/e96ac1452834c706459edc5003884444 $HOME/docker/docker-gc

@@ -3,13 +3,17 @@ composer
 curl
 exa
 github/gh/gh
+go
 gpg
 graphviz
 grep
 htop
 httpie
+jesseduffield/lazydocker/lazydocker
 mplayer
+npm
 node
+siege
 vim
 wget
 wrk

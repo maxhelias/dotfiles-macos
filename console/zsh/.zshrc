@@ -12,6 +12,9 @@ export ZSH=~/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+# Remove the user name
+DEFAULT_USER="$USER"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -101,6 +104,7 @@ alias brew-upgrade="brew upgrade | tee upgrade-$( date +%F ).log"
 # Docker
 alias dc="docker-compose"
 alias dc-rmi="docker-compose down -v --rmi all --remove-orphans"
+alias lzd='lazydocker'
 
 # PHP
 alias sc="security-checker security:check"
@@ -120,7 +124,7 @@ alias count="cloc . --exclude-dir=node_modules,test,tests,var,vendor"
 
 # Automatically added by the Platform.sh CLI installer
 export PATH="~/.platformsh/bin:$PATH"
-. '~/.platformsh/shell-config.rc' 2>/dev/null || true
+if [ -f '~/.platformsh/shell-config.rc' ]; then . '~/.platformsh/shell-config.rc'; fi
 
 
 #################

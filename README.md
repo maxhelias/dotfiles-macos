@@ -63,6 +63,7 @@ ohmyzsh # Edit ~/.oh-my-zsh
 # Docker
 dc # docker-compose
 dc-rmi # Down and remove all images and volume with orphans on the projet directory
+lzd # Lunch Lazydocker
 blackfire-curl # Run blackfire curl on the current project container
 blackfire-run # Run balckfire run on the current project container
 
@@ -76,3 +77,6 @@ sfcll # Hard delete log file on logs folder
 #### TODO
 
 - Use [homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) and Brewfile
+- Import phpstorm config
+- Import iTerm2 config
+- Guide git signed commit
