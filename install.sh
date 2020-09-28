@@ -122,6 +122,7 @@ git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM}/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 git clone https://github.com/iam4x/zsh-iterm-touchbar.git ${ZSH_CUSTOM}/plugins/zsh-iterm-touchbar
+git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM}/plugins/git-open
 
 # Platform.sh
 curl -sS https://platform.sh/cli/installer | php

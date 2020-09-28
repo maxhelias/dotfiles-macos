@@ -20,5 +20,8 @@
         trustctime = false
         precomposeunicode = false
 
+[tag]
+        gpgsign = false
+
 [commit]
         gpgsign = false
