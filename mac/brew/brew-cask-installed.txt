@@ -1,13 +1,11 @@
 appcleaner
 cakebrew
-copyclip
 discord
 docker-edge
 font-meslo-for-powerline
 google-chrome-beta
 google-drive-file-stream
 iterm2-beta
-java
 jetbrains-toolbox
 pock
 postman
@@ -16,7 +14,6 @@ spectacle
 screenflow
 slack-beta
 sublime-text
-termius
 virtualbox
 visual-studio-code
 vlc

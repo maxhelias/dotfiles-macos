@@ -7,8 +7,6 @@
 		"ergebnis/composer-normalize": "@stable",
 		"icanhazstring/composer-unused": "@stable",
 		"friendsofphp/php-cs-fixer": "dev-master",
-		"phpstan/phpstan": "dev-master",
-		"phpunit/phpunit": "@stable",
 		"psy/psysh": "@stable",
 		"sensiolabs/security-checker": "@stable"
 	}

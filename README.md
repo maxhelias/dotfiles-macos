@@ -45,7 +45,7 @@ update_apps # Update macOS / brew / brew cask / composer & npm global
 brew-upgrade # Update all brew package and write all information in upgrade-$( date +%F ).log file
 
 # Move
-ll # Display directory with exa
+ls # Display directory with exa
 ll # Like ll with hidden
 ctree # Display a tree recursive with detail
 tmp # Go to /tmp folder
@@ -73,10 +73,3 @@ sf # Run Symfony Console on the current project
 sfcl # Hard delete cache folder
 sfcll # Hard delete log file on logs folder
 ```
-
-#### TODO
-
-- Use [homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) and Brewfile
-- Import phpstorm config
-- Import iTerm2 config
-- Guide git signed commit
