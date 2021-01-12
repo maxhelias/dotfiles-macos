@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "@api-platform/client-generator": "^0.1.16",
-    "terminalizer": "^0.7",
-    "webpack": "^4.29",
-    "webpack-cli": "^3.3"
+    "@api-platform/client-generator": "latest",
+    "npm-check": "latest",
+    "terminalizer": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest"
   }
 }
