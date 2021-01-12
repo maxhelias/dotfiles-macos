@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Dotfiles path
 DOTFILES_PATH=$HOME/dotfiles
 
@@ -10,7 +17,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Remove the user name
 DEFAULT_USER="$USER"
@@ -57,7 +64,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew composer docker docker-compose git git-open node react-native redis-cli sublime sudo symfony web-search yarn z zsh-completions zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
+plugins=(aws brew composer docker docker-compose git git-open node sudo symfony web-search yarn z zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,8 +125,12 @@ alias sfcll="rm */logs/*.log"
 alias blackfire-curl="dc exec blackfire blackfire curl"
 alias blackfire-run="dc exec php blackfire run"
 
+# Navigation
+alias ls="ls -G"
+alias ll="ls -lG"
+
 # Other
-alias grep="grep --color=auto"
+alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias count="cloc . --exclude-dir=node_modules,test,tests,var,vendor"
 
 # Automatically added by the Platform.sh CLI installer
@@ -172,3 +183,6 @@ gosites() {
 sfpermission() {
   chmod 0777 */cache */logs
 }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

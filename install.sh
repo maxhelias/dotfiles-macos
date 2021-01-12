@@ -116,13 +116,15 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 # Config Zsh
 ln -sf ${DOTFILES_PATH}/console/zsh/.zshrc $HOME/.zshrc
+ln -sf ${DOTFILES_PATH}/console/zsh/.p10k.zsh $HOME/.p10k.zsh
 
 # Plugins Zsh
-git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM}/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 git clone https://github.com/iam4x/zsh-iterm-touchbar.git ${ZSH_CUSTOM}/plugins/zsh-iterm-touchbar
 git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM}/plugins/git-open
+# Themes Zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 
 # Platform.sh
 curl -sS https://platform.sh/cli/installer | php
