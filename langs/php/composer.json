@@ -5,9 +5,9 @@
 	},
 	"require": {
 		"ergebnis/composer-normalize": "@stable",
-		"icanhazstring/composer-unused": "@stable",
 		"friendsofphp/php-cs-fixer": "dev-master",
+		"icanhazstring/composer-unused": "@stable",
 		"psy/psysh": "@stable",
-		"sensiolabs/security-checker": "@stable"
+		"rector/rector": "@stable"
 	}
 }

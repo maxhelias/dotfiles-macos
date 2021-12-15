@@ -78,7 +78,7 @@ brew install git
 git clone https://github.com/maxhelias/dotfiles-macos ${DOTFILES_PATH}
 
 xargs brew install < ${DOTFILES_PATH}/mac/brew/brew-installed.txt
-xargs brew cask install < ${DOTFILES_PATH}/mac/brew/brew-cask-installed.txt
+xargs brew install --cask < ${DOTFILES_PATH}/mac/brew/brew-cask-installed.txt
 
 ### Git stuff ###
 # Git

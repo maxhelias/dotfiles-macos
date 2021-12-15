@@ -10,6 +10,7 @@ grep
 htop
 httpie
 jesseduffield/lazydocker/lazydocker
+mas
 mplayer
 npm
 node
@@ -19,3 +20,4 @@ wget
 wrk
 yarn
 youtube-dl
+yq

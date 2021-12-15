@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "@api-platform/client-generator": "latest",
+    "@sentry/cli": "^1.68.0",
+    "newman": "^5.2.2",
     "npm-check": "latest",
     "terminalizer": "latest",
-    "webpack": "latest",
-    "webpack-cli": "latest"
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0"
   }
 }

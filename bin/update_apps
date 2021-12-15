@@ -1,16 +1,13 @@
 #!/bin/bash
 
 echo '♢ Updating App Store apps'
-mac upgrade
+softwareupdate -ia --verbose
+mas upgrade
 
 echo ''
-echo '♢ Updating Brew apps'
+echo '♢ Updating Brew & Brew Cask apps'
 brew update >/dev/null
 brew outdated | xargs -n1 brew upgrade
-
-echo ''
-echo '♢ Updating Brew Cask apps'
-brew cask outdated | xargs -n1 brew cask install --force
 
 echo ''
 echo '♢ Updating Composer (PHP)'
