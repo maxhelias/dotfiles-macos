@@ -1,6 +1,6 @@
 [alias]
-        # Delete branches merged with master @todo don't delete development and so on...
-        cleanup = "!git checkout development && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+        # Delete branches merged with master @todo don't delete dev and so on...
+        cleanup = "!git checkout dev && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
         # Display a graph history
         graph = "!git log --all --decorate --oneline --graph --date=short --pretty='%C(red)%h%Creset | %C(yellow)%ad%Creset | %C(green)%an%Creset | %s'"
         # Display contributor
@@ -25,3 +25,7 @@
 
 [commit]
         gpgsign = false
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
