@@ -9,7 +9,7 @@ fi
 DOTFILES_PATH=$HOME/dotfiles
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.composer/vendor/bin:$HOME/.symfony/bin
+export PATH=$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.composer/vendor/bin:$HOME/.symfony/bin:/opt/homebrew/opt/mysql-client/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -64,7 +64,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew composer docker docker-compose git git-open node sudo symfony web-search yarn z zsh-syntax-highlighting zsh-autosuggestions zsh-iterm-touchbar)
+plugins=(aws brew composer docker docker-compose git git-open node sudo symfony web-search yarn z zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,6 +132,9 @@ alias ll="ls -lG"
 # Other
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias count="cloc . --exclude-dir=node_modules,test,tests,var,vendor"
+
+# Certificationy
+alias certificationy="php ~/www/project/certificationy-cli/certificationy.php"
 
 # Automatically added by the Platform.sh CLI installer
 export PATH="~/.platformsh/bin:$PATH"

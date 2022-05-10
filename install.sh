@@ -121,7 +121,6 @@ ln -sf ${DOTFILES_PATH}/console/zsh/.p10k.zsh $HOME/.p10k.zsh
 # Plugins Zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
-git clone https://github.com/iam4x/zsh-iterm-touchbar.git ${ZSH_CUSTOM}/plugins/zsh-iterm-touchbar
 git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM}/plugins/git-open
 # Themes Zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
@@ -140,13 +139,11 @@ composer global update
 # NPM
 mkdir -p $HOME/.config/yarn/global
 ln -sf ${DOTFILES_PATH}/langs/yarn/package.json $HOME/.config/yarn/global/package.json
-yarn global upgrade
+cd (yarn global dir) && yarn install
+
+cd ~ && yarn global upgrade
 
 ### Init project ###
-## Symfony
-# Binary
-curl -sS https://get.symfony.com/cli/installer | bash
-
 ## Docker-gc (Garbage Collector)
 git clone https://gist.github.com/ajardin/e96ac1452834c706459edc5003884444 $HOME/docker/docker-gc
 ln -sf $HOME/docker/docker-gc/docker-gc.sh $HOME/docker/docker-gc.sh
@@ -157,6 +154,9 @@ touch $HOME/.docker/.gc-exclude-volumes
 
 ### Install contrib
 sh ${DOTFILES_PATH}/mac/contrib.sh
+
+### Install Certificationy
+composer create-project certificationy/certificationy-cli $HOME/www/project/certificationy-cli
 
 # Refresh terminal
 source ~/.zshrc

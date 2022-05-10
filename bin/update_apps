@@ -21,6 +21,5 @@ echo ''
 echo '♢ Updating ZSH Custom'
 git -C ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting pull
 git -C ${ZSH_CUSTOM}/plugins/zsh-autosuggestions pull
-git -C ${ZSH_CUSTOM}/plugins/zsh-iterm-touchbar pull
 git -C ${ZSH_CUSTOM}/plugins/git-open pull
 git -C ${ZSH_CUSTOM}/themes/powerlevel10k pull
