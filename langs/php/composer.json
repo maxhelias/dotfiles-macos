@@ -8,9 +8,11 @@
 		"sort-packages": true
 	},
 	"require": {
+		"deployer/deployer": "@stable",
 		"ergebnis/composer-normalize": "@stable",
 		"friendsofphp/php-cs-fixer": "dev-master",
 		"icanhazstring/composer-unused": "@stable",
+		"maglnet/composer-require-checker": "@stable",
 		"psy/psysh": "@stable",
 		"rector/rector": "@stable"
 	}

@@ -1,7 +1,9 @@
-alias ll='exa -l'
-alias la='exa -la'
-alias lf='ls -d */'
+alias ls='exa -lh'
+alias ll='exa -lha'
 alias ctree='exa -T -l'
 
 # Jumps
 alias tmp='cd /tmp'
+
+# PATH
+alias mypath='echo -e ${PATH//:/\\n} | sort --unique'

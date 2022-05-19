@@ -1,19 +1,5 @@
 #!/bin/bash
 
-confirm()
-{
-    read -r -p "${1} [y/N] " response
-
-    case "$response" in
-        [yY][eE][sS]|[yY])
-            true
-            ;;
-        *)
-            false
-            ;;
-    esac
-}
-
 # Define variable
 UNAME=$(uname)
 DOTFILES_PATH=$HOME/dotfiles
@@ -28,79 +14,64 @@ reset=$(tput sgr0)
 
 # Check if the installation is possible
 if [[ "$UNAME" != "Darwin" ]] ; then
-	echo "Sorry, this OS is not supported yet via this installer."
+	echo "${error}Sorry, this OS is not supported yet via this installer.${reset}"
     exit 1
 fi
 
 if [[ -z $HOME ]] || [[ ! -d $HOME ]]; then
-	echo "The installation and use of this dotfiles requires the \$HOME environment variable be set to a directory where its files can be installed."
+	echo "${error}The installation and use of this dotfiles requires the \$HOME environment variable be set to a directory where its files can be installed.${reset}"
 	exit 1
 fi
 
 if [[ -d ${DOTFILES_PATH} ]]; then
-	if false != confirm "${question}You already have an installation of this dotfiles. Do you want to reinstall it ?${reset}"; then
-	    echo ""
-        echo "${error}==> Installation abort...${reset}"
+    echo "${error}You already have an installation of this dotfiles.${reset}"
+    echo "${error}==> Installation abort...${reset}"
 
-	    exit 1
-	fi
+    exit 1
 fi
 
 echo ""
 echo "${info}==> Installation in progress...${reset}"
 
-# Show hidden files
-defaults write com.apple.finder AppleShowAllFiles YES
-killall Finder
+mkdir -p $HOME/Pictures/screenshot
 
 # Create archi
 mkdir -p $HOME/www
-mkdir -p $HOME/www/contrib
-mkdir -p $HOME/www/project
+mkdir -p $HOME/www/opensource
+mkdir -p $HOME/www/perso
+mkdir -p $HOME/www/work
 mkdir -p $HOME/www/sandbox
-mkdir -p $HOME/docker
 mkdir -p $HOME/backup
 mkdir -p $HOME/logs
 
 ### MacOs stuff ###
-sudo xcodebuild --install
-sudo xcodebuild -license
+# Ask for the administrator password upfront
+sudo -v
+# Trigger the initialization
+sh ${DOTFILES_PATH}/mac/configure.sh
+xcodebuild --install
+xcodebuild -license
 
-# Install Brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Install Brew if not already installed
+command -v brew > /dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Fetch the newest version of Homebrew and all formulae & install Git
 brew update
-brew upgrade
-brew tap homebrew/cask-versions
-brew tap homebrew/cask-fonts
+brew install git
 
 # Get repository
-brew install git
 git clone https://github.com/maxhelias/dotfiles-macos ${DOTFILES_PATH}
 
-xargs brew install < ${DOTFILES_PATH}/mac/brew/brew-installed.txt
-xargs brew install --cask < ${DOTFILES_PATH}/mac/brew/brew-cask-installed.txt
+brew bundle install --file ${DOTFILES_PATH}/mac/Brewfile --verbose
 
 ### Git stuff ###
-# Git
-
 echo ""
 echo "${info}==> Setting your profile Git...${reset}"
 
 ln -sf ${DOTFILES_PATH}/git/.gitconfig $HOME/.gitconfig
+ln -sf ${DOTFILES_PATH}/git/.gitconfig-opensource $HOME/.gitconfig-opensource
+ln -sf ${DOTFILES_PATH}/git/.gitconfig-work $HOME/.gitconfig-work
 ln -sf ${DOTFILES_PATH}/git/.gitignore_global $HOME/.gitignore_global
 ln -sf ${DOTFILES_PATH}/git/.gitattributes $HOME/.gitattributes
-
-if confirm "${question}Do you want to save your Git credentials ?${reset}"; then
-    read -r -p "${question}Enter your email :${reset} " email
-    if [[ "${email}" != "" ]]; then
-        git config --global user.email ${email}
-    fi
-
-    read -r -p "${question}Enter your username :${reset} " username
-    if [[ "${username}" != "" ]]; then
-        git config --global user.name "${username}"
-    fi
-fi
 
 ### Console stuff ###
 echo ""
@@ -129,14 +100,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/t
 curl -sS https://platform.sh/cli/installer | php
 
 ### Langs stuff ###
-# PHP
-brew install php
-
+# PHP / Composer
 mkdir -p $HOME/.composer
 ln -sf ${DOTFILES_PATH}/langs/php/composer.json $HOME/.composer/composer.json
 composer global update
 
-# NPM
+# Yarn
 mkdir -p $HOME/.config/yarn/global
 ln -sf ${DOTFILES_PATH}/langs/yarn/package.json $HOME/.config/yarn/global/package.json
 cd (yarn global dir) && yarn install
@@ -144,19 +113,11 @@ cd (yarn global dir) && yarn install
 cd ~ && yarn global upgrade
 
 ### Init project ###
-## Docker-gc (Garbage Collector)
-git clone https://gist.github.com/ajardin/e96ac1452834c706459edc5003884444 $HOME/docker/docker-gc
-ln -sf $HOME/docker/docker-gc/docker-gc.sh $HOME/docker/docker-gc.sh
-touch $HOME/.docker/.gc-exclude-images
-touch $HOME/.docker/.gc-exclude-containers
-touch $HOME/.docker/.gc-exclude-volumes
-
-
-### Install contrib
-sh ${DOTFILES_PATH}/mac/contrib.sh
+### Install opensource
+sh ${DOTFILES_PATH}/mac/opensource.sh
 
 ### Install Certificationy
-composer create-project certificationy/certificationy-cli $HOME/www/project/certificationy-cli
+composer create-project certificationy/certificationy-cli $HOME/www/perso/certificationy-cli
 
 # Refresh terminal
 source ~/.zshrc

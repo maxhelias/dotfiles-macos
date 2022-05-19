@@ -1,0 +1,5 @@
+[user]
+    email = maximehelias16@gmail.com
+
+[commit]
+    gpgsign = true

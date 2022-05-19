@@ -53,6 +53,8 @@ tmp # Go to /tmp folder
 # Info
 privateip # Display private IP
 publicip # Display public IP
+ping # Pretty ping
+mypath # Pretty PATH 
 count # Count all file on the directory recursively withou node_modules, tests, var and vendor
 weather $1 # Display the weather in $1 city
 
@@ -63,7 +65,6 @@ ohmyzsh # Edit ~/.oh-my-zsh
 # Docker
 dc # docker-compose
 dc-rmi # Down and remove all images and volume with orphans on the projet directory
-lzd # Lunch Lazydocker
 blackfire-curl # Run blackfire curl on the current project container
 blackfire-run # Run balckfire run on the current project container
 
@@ -72,4 +73,5 @@ sc # Run the Security Checker on the current project
 sf # Run Symfony Console on the current project
 sfcl # Hard delete cache folder
 sfcll # Hard delete log file on logs folder
+certificationy # Training PHP/Symfony certification
 ```

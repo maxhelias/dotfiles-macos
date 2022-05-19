@@ -111,7 +111,6 @@ alias brew-upgrade="brew upgrade | tee upgrade-$( date +%F ).log"
 # Docker
 alias dc="docker-compose"
 alias dc-rmi="docker-compose down -v --rmi all --remove-orphans"
-alias lzd='lazydocker'
 
 # PHP
 alias sc="security-checker security:check"
@@ -125,16 +124,12 @@ alias sfcll="rm */logs/*.log"
 alias blackfire-curl="dc exec blackfire blackfire curl"
 alias blackfire-run="dc exec php blackfire run"
 
-# Navigation
-alias ls="ls -G"
-alias ll="ls -lG"
-
 # Other
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias count="cloc . --exclude-dir=node_modules,test,tests,var,vendor"
 
 # Certificationy
-alias certificationy="php ~/www/project/certificationy-cli/certificationy.php"
+alias certificationy="php ~/www/perso/certificationy-cli/certificationy.php"
 
 # Automatically added by the Platform.sh CLI installer
 export PATH="~/.platformsh/bin:$PATH"
@@ -153,7 +148,7 @@ function weather() {
 
 # View versions of docker tools
 function docker-version() {
-    docker -v && docker-machine -v && docker-compose -v
+    docker -v && docker-compose -v
 }
 
 # Go inside one of the services managed by Docker Compose.

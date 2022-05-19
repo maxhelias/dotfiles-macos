@@ -1,0 +1,127 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "shivammathur/php"
+
+##> Brew
+# Run your GitHub Actions locally
+brew "act"
+# Count Line Of Code
+brew "cloc"
+# Dependency Manager for PHP
+brew "composer"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Analyze layer in a docker image
+brew "dive"
+# A modern replacement for "ls"
+brew "exa"
+# GitHub Command Line
+brew "gh"
+# Go
+brew "go"
+# GNU PGP
+brew "gpg"
+# Graph visualization
+brew "graphviz"
+# GNU Grep
+brew "grep"
+# Smarter Dockerfile linter to validate best practices
+brew "hadolint"
+# Improved top (interactive process viewer)
+brew "htop"
+# cURL replacement
+brew "httpie"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Utility for directing compilation
+brew "make"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# Mac App Store
+brew "mas"
+# MySQL Client
+brew "mysql-client"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Platform built on V8 to build network applications
+brew "node"
+# General-purpose scripting language
+brew "php"
+# Wrapper to colorize and simplify ping's output
+brew "prettyping"
+# HTTP regression testing and benchmark
+brew "siege"
+# Symfony CLI
+brew "symfony-cli/tap/symfony-cli"
+# Internet file retriever
+brew "wget"
+# HTTP Benchmark
+brew "wrk"
+# JavaScript package manager
+brew "yarn"
+# Download YouTube videos
+brew "youtube-dl"
+# Process YAML documents from the CLI
+brew "yq"
+
+##> Cask
+# Uninstall unwated apps
+cask "appcleaner"
+# Antivirus
+cask "avira-antivirus"
+# GUI app for Homebrew
+cask "cakebrew"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerized applications and microservices
+cask "docker-edge"
+# Font for powerline
+cask "font-meslo-for-powerline"
+# Web browser
+cask "google-chrome-beta"
+# Client for the Google Drive storage service
+cask "google-drive-file-stream"
+# Tool to optimize images to a smaller size
+cask "imageoptim"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2-beta"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
+# Java OSM
+cask "josm"
+# MySQL WorkBench
+cask "mysqlworkbench"
+# Collaboration platform for API developmen
+cask "postman"
+# QGIS (Geographic Information System)
+cask "qgis"
+# Modified browser that helps in responsive web development
+cask "responsively"
+# Move and resize windows with ease
+cask "spectacle"
+# Screen recording and video editing software
+cask "screenflow"
+# Team communication and collaboration software
+cask "slack-beta"
+# Free and open-source OpenVPN client
+cask "tunnelblick"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
+# Video communication and virtual meeting platform
+cask "zoom"
+
+##> Mac App Store
+# Clipboard manager
+mas "CopyClip"
+# Software for macOS
+mas "Xcode"
+# SSH platform
+mas "Termius"
+# Client e-mail
+mas "Spark"

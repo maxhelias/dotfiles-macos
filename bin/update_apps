@@ -11,14 +11,15 @@ brew outdated | xargs -n1 brew upgrade
 
 echo ''
 echo '♢ Updating Composer (PHP)'
-composer global update
+composer global update --optimize-autoloader --classmap-authoritative
 
 echo ''
 echo '♢ Updating yarn (JS)'
 yarn global upgrade
 
 echo ''
-echo '♢ Updating ZSH Custom'
+echo '♢ Updating ZSH'
+omz update
 git -C ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting pull
 git -C ${ZSH_CUSTOM}/plugins/zsh-autosuggestions pull
 git -C ${ZSH_CUSTOM}/plugins/git-open pull
