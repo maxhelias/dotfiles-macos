@@ -1,5 +1,5 @@
-alias ls='exa -lh'
-alias ll='exa -lha'
+alias ls='exa -lh --octal-permissions --icons'
+alias ll='exa -lha --octal-permissions --icons'
 alias ctree='exa -T -l'
 
 # Jumps

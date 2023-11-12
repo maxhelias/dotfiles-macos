@@ -1,13 +1,17 @@
 [user]
 	name = Maxime Hélias
+	email = maximehelias16@gmail.com
 
-[includeIf "gitdir:~/www/work"]
+[includeIf "gitdir:~/www/work/"]
         path = ~/.gitconfig-work
 
-[includeIf "gitdir:~/www/opensource"]
+[includeIf "gitdir:~/www/opensource/"]
         path = ~/.gitconfig-opensource
 
-[includeIf "gitdir:~/www/perso"]
+[includeIf "gitdir:~/www/perso/"]
+        path = ~/.gitconfig-opensource
+
+[includeIf "gitdir:~/www/sandbox/"]
         path = ~/.gitconfig-opensource
 
 [alias]

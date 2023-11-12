@@ -101,6 +101,9 @@ source $DOTFILES_PATH/console/init.sh
 ################
 ### MY ALIAS ###
 ################
+alias c="clear"
+alias q="exit"
+
 # ZSH Config
 alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
@@ -109,11 +112,8 @@ alias ohmyzsh="nano ~/.oh-my-zsh"
 alias brew-upgrade="brew upgrade | tee upgrade-$( date +%F ).log"
 
 # Docker
-alias dc="docker-compose"
-alias dc-rmi="docker-compose down -v --rmi all --remove-orphans"
-
-# PHP
-alias sc="security-checker security:check"
+alias dc="docker compose"
+alias dc-rmi="docker compose down -v --rmi all --remove-orphans"
 
 # Symfony
 alias sf="php bin/console"
@@ -129,7 +129,7 @@ alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias count="cloc . --exclude-dir=node_modules,test,tests,var,vendor"
 
 # Certificationy
-alias certificationy="php ~/www/perso/certificationy-cli/certificationy.php"
+alias certificationy="php ~/www/perso/certificationy-cli/certificationy.php --training"
 
 # Automatically added by the Platform.sh CLI installer
 export PATH="~/.platformsh/bin:$PATH"
