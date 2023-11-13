@@ -8,6 +8,7 @@ echo ''
 echo '♢ Updating Brew & Brew Cask apps'
 brew update >/dev/null
 brew outdated | xargs -n1 brew upgrade
+brew outdated  --cask | xargs -n1 brew upgrade  --cask
 
 echo ''
 echo '♢ Updating Composer (PHP)'

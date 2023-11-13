@@ -48,12 +48,13 @@ q # Exit
 
 # Git
 batdiff # Beautiful git diff
+fzf-gc # Beautiful git checkout
 
 # Directory
 ls # Display directory with exa
 ll # Like ll with hidden
 fzf-preview # Display directory recursively with a preview
-ctree # Display a tree recursive with detail
+tree # Display a tree recursive with detail
 tmp # Go to /tmp folder
 
 # Info
