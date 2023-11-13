@@ -11,7 +11,7 @@
 
 ## What's inside?
  * A [lot of custom binaries to play](bin)
- * [Aliases](bin) and [aliases](console/_aliases)
+ * [Aliases](console/_aliases)
  * [Git](git/.gitconfig) configuration
  * Some [php](langs/php) configurations
  * zsh (with suggestions, autocompletion, ...)
@@ -43,10 +43,16 @@ update_apps # Update macOS / brew / brew cask / composer & npm global
 ```bash
 # System
 brew-upgrade # Update all brew package and write all information in upgrade-$( date +%F ).log file
+c # Clear
+q # Exit
 
-# Move
+# Git
+batdiff # Beautiful git diff
+
+# Directory
 ls # Display directory with exa
 ll # Like ll with hidden
+fzf-preview # Display directory recursively with a preview
 ctree # Display a tree recursive with detail
 tmp # Go to /tmp folder
 
@@ -61,6 +67,7 @@ weather $1 # Display the weather in $1 city
 # Config
 zshconfig # Edit ~/.zsh file
 ohmyzsh # Edit ~/.oh-my-zsh
+sc # Run source ~/.zshrc
 
 # Docker
 dc # docker-compose

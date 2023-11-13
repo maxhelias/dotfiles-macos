@@ -9,6 +9,8 @@ tap "shivammathur/php"
 ##> Brew
 # Run your GitHub Actions locally
 brew "act"
+# A cat(1) clone with wings
+brew "bat"
 # Count Line Of Code
 brew "cloc"
 # Dependency Manager for PHP
@@ -19,6 +21,10 @@ brew "curl"
 brew "dive"
 # A modern replacement for "ls"
 brew "exa"
+# A alternative to 'find'
+brew "fd"
+# Fuzzy finder
+brew "fzf"
 # GitHub Command Line
 brew "gh"
 # Go
@@ -57,6 +63,8 @@ brew "prettyping"
 brew "siege"
 # Symfony CLI
 brew "symfony-cli/tap/symfony-cli"
+# Corrects previous console command
+brew "thefuck"
 # Internet file retriever
 brew "wget"
 # HTTP Benchmark

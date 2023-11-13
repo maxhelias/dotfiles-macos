@@ -1,6 +1,6 @@
 alias ls='exa -lh --octal-permissions --icons'
 alias ll='exa -lha --octal-permissions --icons'
-alias ctree='exa -T -l'
+alias ctree='exa -T -l --icons'
 
 # Jumps
 alias tmp='cd /tmp'
