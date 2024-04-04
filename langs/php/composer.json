@@ -1,9 +1,10 @@
 {
 	"config": {
 		"allow-plugins": {
-            "ergebnis/composer-normalize": true,
-			"icanhazstring/composer-unused": true
-        },
+			"ergebnis/composer-normalize": true,
+			"icanhazstring/composer-unused": true,
+			"pyrech/composer-changelogs": true
+		},
 		"optimize-autoloader": true,
 		"sort-packages": true
 	},
@@ -14,6 +15,7 @@
 		"icanhazstring/composer-unused": "@stable",
 		"maglnet/composer-require-checker": "@stable",
 		"psy/psysh": "@stable",
+		"pyrech/composer-changelogs": "@stable",
 		"rector/rector": "@stable"
 	}
 }
