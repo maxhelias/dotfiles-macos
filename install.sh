@@ -96,10 +96,10 @@ git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM}/plugins/git-op
 # Themes Zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM}/themes/powerlevel10k
 
-# Platform.sh
-curl -sS https://platform.sh/cli/installer | php
-
 ### Langs stuff ###
+# GO
+curl -sSL https://git.io/g-install | sh -s -- bash
+
 # PHP / Composer
 mkdir -p $HOME/.composer
 ln -sf ${DOTFILES_PATH}/langs/php/composer.json $HOME/.composer/composer.json

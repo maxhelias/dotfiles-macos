@@ -4,8 +4,12 @@ export ZSH=~/.oh-my-zsh
 # Zsh Custom
 export ZSH_CUSTOM="$ZSH/custom"
 
+# Go
+export GOPATH="$HOME/go"; 
+export GOROOT="$HOME/.go"; 
+
 # Extend PATH
-export PATH=$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.composer/vendor/bin:$HOME/.symfony/bin
+export PATH=$PATH:$HOME/bin:$DOTFILES_PATH/bin:$HOME/.composer/vendor/bin:$HOME/.symfony/bin:$GOPATH/bin
 
 # FZF
 export FZF_DEFAULT_OPTS='--layout=reverse --ansi'

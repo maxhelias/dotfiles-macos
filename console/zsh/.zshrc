@@ -25,10 +25,6 @@ eval $(thefuck --alias)
 # https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Platform.sh CLI
-export PATH="~/.platformsh/bin:$PATH"
-if [ -f '~/.platformsh/shell-config.rc' ]; then . '~/.platformsh/shell-config.rc'; fi
-
 
 ################
 # USER SETTING #
@@ -84,6 +80,8 @@ alias sfcll="rm */logs/*.log"
 # Blackfire
 alias blackfire-curl="dc exec blackfire blackfire curl"
 alias blackfire-run="dc exec php blackfire run"
+
+alias ggo="$GOPATH/bin/g";
 
 # Other
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
