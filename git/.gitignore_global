@@ -1,8 +1,16 @@
 # IntelliJ IDEA
 .idea
+.vscode
 *.iml
 *.iws
 .idea-compl
+
+# Npm / Yarn
+node_modules/
+npm-shrinkwrap.json
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
 
 # Mac
 .DS_Store

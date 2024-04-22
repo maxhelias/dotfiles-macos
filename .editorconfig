@@ -1,7 +1,59 @@
-[.zshrc]
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# editorconfig.org
+
+root = true
+
+[*]
+# Change these settings to your own preference
 indent_style = space
-indent_size  = 2
+indent_size = 4
+
+# We recommend you to keep these unchanged
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.feature]
+indent_size = 2
+
+[*.{js,jsx,css,scss,sass,ts,tsx}]
+indent_size = 2
+
+[*.json]
+indent_size = 2
 
 [*.md]
-indent_style = space
+indent_size = 4
+trim_trailing_whitespace = false
+
+[*.neon]
+indent_style = tab
+
+[*.sh]
+indent_style = tab
+
+[*.{yaml,yml}]
+trim_trailing_whitespace = false
+
+[.babelrc]
+indent_size = 2
+
+[.gitmodules]
+indent_style = tab
+
+[.zshrc]
 indent_size  = 2
+
+[docker-compose{,.override}.{yaml,yml}]
+indent_size = 2
+
+[Dockerfile]
+indent_style = tab
+
+[package.json]
+indent_size = 2
+
+[phpstan.neon]
+indent_style = tab
