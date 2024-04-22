@@ -29,6 +29,31 @@ Run this command :
 curl -s https://raw.githubusercontent.com/maxhelias/dotfiles-macos/master/install.sh | sh
 ```
 
+### Authentificate to Github and signing commits using SSH Key
+
+Generate SSH key
+
+```sh
+ssh-keygen -t ed25519 -C "name@email.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+```
+
+[Copy the key on GitHub](https://github.com/settings/ssh/new), do it twice :
+- once for Key type "Authentification Key"
+- once for Key type "Signing commits"
+
+The configuration is already ready in [this file](https://github.com/maxhelias/dotfiles-macos/blob/main/git/.gitconfig-work).
+
+To check if it's working, create a new git repository on any empty dir :
+```bash
+git init
+git commit --allow-empty --message="Testing SSH signing"
+# If working properly, output will be:
+[main 9xxx104] Testing SSH signing
+```
+
 ## Usage
 
 #### Bin

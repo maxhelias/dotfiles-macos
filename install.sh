@@ -47,10 +47,6 @@ mkdir -p $HOME/logs
 ### MacOs stuff ###
 # Ask for the administrator password upfront
 sudo -v
-# Trigger the initialization
-sh ${DOTFILES_PATH}/mac/configure.sh
-xcodebuild --install
-xcodebuild -license
 
 # Install Brew if not already installed
 command -v brew > /dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -60,6 +56,11 @@ brew install git
 
 # Get repository
 git clone https://github.com/maxhelias/dotfiles-macos ${DOTFILES_PATH}
+
+# Trigger the initialization
+sh ${DOTFILES_PATH}/mac/configure.sh
+xcodebuild --install
+xcodebuild -license
 
 brew bundle install --file ${DOTFILES_PATH}/mac/Brewfile --verbose
 

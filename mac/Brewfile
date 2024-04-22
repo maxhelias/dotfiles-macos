@@ -80,6 +80,8 @@ brew "tlrc"
 brew "wget"
 # HTTP Benchmark
 brew "wrk"
+# Access clipboards from the commande-line
+brew "xclip"
 # JavaScript package manager
 brew "yarn"
 # Download YouTube videos

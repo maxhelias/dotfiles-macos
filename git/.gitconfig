@@ -15,6 +15,10 @@
         path = ~/.gitconfig-opensource
 
 [alias]
+        #Pull
+        pull = pull --rebase
+        # Push
+        merge = merge --no-ff
         # Fetch all
         fp = fetch --all --prune --tags --force
         # Amend
