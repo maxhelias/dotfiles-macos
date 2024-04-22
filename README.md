@@ -76,6 +76,7 @@ batdiff # Beautiful git diff
 fzf-gc # Beautiful git checkout
 
 # Directory
+mkcd # Create and go
 ls # Display directory with exa
 ll # Like ll with hidden
 fzf-preview # Display directory recursively with a preview
