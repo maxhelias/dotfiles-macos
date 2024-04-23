@@ -106,6 +106,8 @@ cask "font-meslo-for-powerline"
 cask "google-chrome-beta"
 # Client for the Google Drive storage service
 cask "google-drive-file-stream"
+# Tools to protect your emails and files
+cask "gpg-suite"
 # Tool to optimize images to a smaller size
 cask "imageoptim"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -130,6 +132,8 @@ cask "spectacle"
 cask "screenflow"
 # Team communication and collaboration software
 cask "slack-beta"
+# Email client
+cask "thunderbird"
 # Free and open-source OpenVPN client
 cask "tunnelblick"
 # Open-source code editor
