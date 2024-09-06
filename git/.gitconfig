@@ -2,6 +2,12 @@
 	name = Maxime Hélias
 	email = maximehelias16@gmail.com
 
+[checkout]
+        defaultRemote = origin
+
+[init]
+	defaultBranch = main
+
 [alias]
         #Pull
         pull = pull --rebase
@@ -18,31 +24,48 @@
         # Display contributor
         contibutor = "!git shortlog -s -n -e | head"
 
-[color]
-        ui = auto
-
 [core]
         excludesfile = ~/.gitignore_global
         attributesfile = ~/.gitattributes
-        editor = vim
+        editor = nvim
         autocrlf = input
         trustctime = false
         precomposeunicode = false
+        pager = delta
 
-[checkout]
-        defaultRemote = origin
+[interactive]
+        diffFilter = delta --color-only
+
+[delta]
+        navigate = true
+        line-numbers = true
+        hyperlinks = true
+        features = decorations
+
+[delta "decorations"]
+        file-style = omit
+        hunk-header-decoration-style = blue box
+        hunk-header-file-style = red
+        hunk-header-line-number-style = "#067a00"
+        hunk-header-style = file line-number syntax
+
+[pull]
+	rebase = true
+
+[merge]
+        conflictstyle = diff3
+
+[diff]
+        colorMoved = default
+
+[color]
+        ui = auto
 
 [tag]
         gpgsign = false
 
 [commit]
         gpgsign = false
-
-[pull]
-	rebase = true
-
-[init]
-	defaultBranch = main
 
 [includeIf "gitdir:~/www/work/"]
         path = ~/.gitconfig-work

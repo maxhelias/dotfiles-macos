@@ -113,6 +113,11 @@ cd (yarn global dir) && yarn install
 
 cd ~ && yarn global upgrade
 
+### Tools stuff ###
+# GitHub
+gh extension install dlvhdr/gh-dash
+gh extension install seachicken/gh-poi
+
 ### Init project ###
 ### Install opensource
 sh ${DOTFILES_PATH}/mac/opensource.sh
