@@ -118,3 +118,7 @@ docker-cp() {
     docker cp ~/.ssh/id_rsa.pub "${$(basename $PWD)//-/}_$1_$nb":/root/.ssh/id_rsa.pub && \
     docker exec "${$(basename $PWD)//-/}_$1_$nb" sh -c "echo 'eval \$(ssh-agent) && ssh-add' >> /root/.bashrc"
 }
+
+lolws () {
+  wscat --connect wss://127.0.0.1:$1 --header "Authorization: Basic $(echo -n riot:$2 | base64)" --ca ~/www/perso/gololui/config/lcu.pem
+}
