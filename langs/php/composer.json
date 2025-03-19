@@ -3,7 +3,8 @@
 		"allow-plugins": {
 			"ergebnis/composer-normalize": true,
 			"icanhazstring/composer-unused": true,
-			"pyrech/composer-changelogs": true
+			"pyrech/composer-changelogs": true,
+			"soyuka/pmu": true
 		},
 		"optimize-autoloader": true,
 		"sort-packages": true
@@ -16,6 +17,7 @@
 		"maglnet/composer-require-checker": "@stable",
 		"psy/psysh": "@stable",
 		"pyrech/composer-changelogs": "@stable",
-		"rector/rector": "@stable"
+		"rector/rector": "@stable",
+		"soyuka/pmu": "@stable"
 	}
 }
