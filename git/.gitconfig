@@ -28,10 +28,11 @@
         excludesfile = ~/.gitignore_global
         attributesfile = ~/.gitattributes
         editor = nvim
-        autocrlf = input
+	autocrlf = false
         trustctime = false
         precomposeunicode = false
         pager = delta
+	eol = lf
 
 [interactive]
         diffFilter = delta --color-only

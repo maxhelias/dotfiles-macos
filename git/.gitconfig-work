@@ -9,4 +9,4 @@
     gpgsign = true
 
 [commit]
-    gpgsign = true
+    gpgSign = true
