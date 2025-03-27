@@ -9,6 +9,8 @@
 	defaultBranch = main
 
 [alias]
+        #Log with signature
+        logs = log --show-signature
         #Pull
         pull = pull --rebase
         # Push
@@ -62,11 +64,14 @@
 [color]
         ui = auto
 
+[gpg]
+        format = openpgp
+
 [tag]
-        gpgsign = false
+        gpgsign = true
 
 [commit]
-        gpgsign = false
+        gpgsign = true
 
 [includeIf "gitdir:~/www/work/"]
         path = ~/.gitconfig-work
